@@ -34,7 +34,7 @@ print("Waiting for a match to begin")
 while (running):
     time.sleep(stateInterval)
     try:
-        sessionState = client.fetch_presence(client.puuid)['sessionLoopState']
+        sessionState = client.fetch_presence(client.puuid)["matchPresenceData"]['sessionLoopState']
         matchID = client.coregame_fetch_player()['MatchID']
 
         if (sessionState == "PREGAME" or "INGAME" and matchID not in seenMatches):
